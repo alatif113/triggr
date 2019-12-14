@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Triggr</title>
+        <link rel="shortcut icon" href="/en-US/static/@5EF2F3A50D8AD18FA4A049FD8834E1948703083203AA79F0D827E120676D316E/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="{{SPLUNKWEB_URL_PREFIX}}/static/build/css/bootstrap-enterprise.css" />
+        <link rel="stylesheet" type="text/css" href="{{SPLUNKWEB_URL_PREFIX}}/static/build/css/splunkjs-dashboard.css" />
+        <link rel="stylesheet" type="text/css" href="{{SPLUNKWEB_URL_PREFIX}}/static/app/triggr/css/triggr.css" />
+
+        <meta name="referrer" content="never" />
+        <meta name="referrer" content="no-referrer" />
+        <script>
+            // <![CDATA[
+
+            window._splunk_metrics_events = {
+                push: function() {},
+                active: false
+            };
+
+            // ]]>
+        </script>
+    </head>
+
+    <body class="simplexml preload locale-en" data-splunk-version="7.3.1" data-splunk-product="enterprise">
+        <!--
+BEGIN LAYOUT
+This section contains the layout for the dashboard. Splunk uses proprietary
+styles in <div> tags, similar to Bootstrap's grid system.
+-->
+        <header>
+            <a aria-label="Screen reader users, click here to skip the navigation bar" class="navSkip" href="#navSkip" tabindex="1">Skip Navigation &gt;</a>
+            <div class="header splunk-header">
+                <div id="placeholder-splunk-bar">
+                    <a href="{{SPLUNKWEB_URL_PREFIX}}/app/launcher/home" class="brand" title="splunk &gt; listen to your data">splunk<strong>&gt;</strong></a>
+                </div>
+                <div id="placeholder-app-bar"></div>
+            </div>
+            <a id="navSkip"></a>
+        </header>
+        <div class="dashboard-body container-fluid main-section-body" data-role="main">
+            <div id="triggr-container">
+                <table id="searchbar" class="searchbar">
+                    <tbody>
+                        <tr>
+                            <td class="search-input">
+                                <div class="input input-text" id="search-input"></div>
+                            </td>
+                            <td class="search-input">
+                                <div class="input input-dropdown" id="app-input"></div>
+                            </td>
+                            <td class="search-button">
+                                <a class="btn" aria-label="Search Button" href="#">
+                                    <i class="icon-search-thin"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="triggr-top-bar">
+                    <div id="triggr-info" class="closed">
+                        <div class="triggr-icon triggr-icon-status"></div>
+                        <div class="triggr-info-text"></div>
+                        <div class="triggr-info-toggle toggle-down"></div>
+                        <div class="triggr-icon-clear triggr-icon"></div>
+                    </div>
+                    <div id="triggr-menu">
+                        <div class="triggr-menu-item triggr-add" data-attr-tooltip="Add Search">
+                            <div class="triggr-icon triggr-icon-add"></div>
+                        </div>
+                        <div class="triggr-menu-item triggr-layout" data-attr-tooltip="Format Layout">
+                            <div class="triggr-icon triggr-icon-format"></div>
+                        </div>
+                        <div class="triggr-menu-item triggr-reset" data-attr-tooltip="Reset View">
+                            <div class="triggr-icon triggr-icon-resize"></div>
+                        </div>
+                        <div class="triggr-menu-item triggr-discard" data-attr-tooltip="Discard Changes">
+                            <div class="triggr-icon triggr-icon-clear"></div>
+                        </div>
+                        <div class="triggr-menu-item triggr-save" data-attr-tooltip="Save Changes">
+                            <div class="triggr-icon triggr-icon-save"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="triggr-graph"></div>
+            </div>
+            <div class="triggr-modal closed" id="triggr-modal-add">
+                <div class="triggr-modal-error closed">
+                    <div class="triggr-icon triggr-icon-alert"></div>
+                    <span class="triggr-modal-error-text">The saved search field cannot be blank</span>
+                </div>
+                <div class="triggr-modal-contents">
+                    <div class="triggr-modal-label">App</div>
+                    <div id="triggr-modal-app-input"></div>
+                    <div class="triggr-modal-label">Saved Search</div>
+                    <div id="triggr-modal-search-input"></div>
+                    <div class="triggr-modal-buttons">
+                        <div class="triggr-btn btn triggr-btn-modal-cancel">Cancel</div>
+                        <div class="triggr-btn btn triggr-btn-primary" id="triggr-btn-modal-add">Add</div>
+                    </div>
+                </div>
+            </div>
+            <div class="triggr-modal closed" id="triggr-modal-discard">
+                <div class="triggr-modal-contents">
+                    <div class="triggr-modal-title">Are you sure you want to discard all changes?</div>
+                    <div class="triggr-modal-label"></div>
+                    <div class="triggr-modal-buttons">
+                        <div class="triggr-btn btn triggr-btn-modal-cancel">Cancel</div>
+                        <div class="triggr-btn btn triggr-btn-primary" id="triggr-btn-modal-discard">Yes</div>
+                    </div>
+                </div>
+            </div>
+            <div class="triggr-modal-overlay closed"></div>
+        </div>
+        <!--
+END LAYOUT
+-->
+
+        <script src="{{SPLUNKWEB_URL_PREFIX}}/config?autoload=1" crossorigin="use-credentials"></script>
+        <script src="{{SPLUNKWEB_URL_PREFIX}}/static/js/i18n.js"></script>
+        <script src="{{SPLUNKWEB_URL_PREFIX}}/i18ncatalog?autoload=1"></script>
+        <script src="{{SPLUNKWEB_URL_PREFIX}}/static/build/simplexml/index.js"></script>
+        <script src="{{SPLUNKWEB_URL_PREFIX}}/static/app/triggr/js/triggr.js"></script>
+    </body>
+</html>
