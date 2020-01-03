@@ -9,12 +9,8 @@ define(function(require, exports, module) {
         this.nextId = 1;
     };
 
-    GraphUtils.prototype.makeKey = function(a, b, type) {
-        if (type === 'node') {
-            return a.replace(/\s/g, '_') + ':' + b.replace(/\s/g, '_');
-        } else {
-            return a + '::' + b;
-        }
+    GraphUtils.prototype.makeKey = function(a, b) {
+        return a.replace(/\s/g, '_') + ':' + b.replace(/\s/g, '_');
     };
 
     GraphUtils.prototype.getId = function(key) {
@@ -36,7 +32,7 @@ define(function(require, exports, module) {
     };
 
     GraphUtils.prototype.pushUniqueNode = function(array, app, search, tempEl) {
-        let key = this.makeKey(app, search, 'node');
+        let key = this.makeKey(app, search);
         let id = this.getId(key);
         let unique = this.isUnique(array, id);
         if (unique) {
@@ -58,7 +54,7 @@ define(function(require, exports, module) {
     };
 
     GraphUtils.prototype.pushUniqueEdge = function(array, source, target) {
-        let key = this.makeKey(source, target, 'edge');
+        let key = this.makeKey(source, target);
         let id = this.getId(key);
         let unique = this.isUnique(array, id);
         if (unique) array.push({ id: id, source: source, target: target });
