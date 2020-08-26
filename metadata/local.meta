@@ -13,14 +13,14 @@ modtime = 1575666709.488138000
 [savedsearches/Test%202]
 export = none
 owner = admin
-version = 7.3.1
-modtime = 1576226491.232828000
+version = 8.0.5
+modtime = 1598405186.267398000
 
 [savedsearches/Test%203]
 export = none
 owner = admin
 version = 8.0.5
-modtime = 1598400944.620167000
+modtime = 1598405186.275702000
 
 [app/ui]
 version = 7.3.1

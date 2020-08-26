@@ -584,12 +584,20 @@ body {
     display: inline-block;
     width: 209px;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     line-height: normal;
-    vertical-align: middle;
+    vertical-align: text-top;
+}
+
+.node-app .node-text {
+    word-break: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.node-search .node-text {
+    word-break: break-word;
 }
 
 .node-container.selected .node-app,
