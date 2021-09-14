@@ -352,7 +352,7 @@ body {
     max-width: 800px;
     color: #fff;
     z-index: 900;
-    padding: 8px 16px;
+    padding: 8px 10px;
     border-radius: 3px;
     visibility: visible;
     opacity: 1;
@@ -361,6 +361,11 @@ body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     height: 36px;
+}
+
+#triggr-info.toggle-up,
+#triggr-info.toggle-down {
+    cursor: pointer;
 }
 
 #triggr-info.closed {
@@ -386,17 +391,21 @@ body {
     margin-top: 7px;
     width: 0;
     height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 7px solid #fff;
     -webkit-transition: all 0.15s ease;
     transition: all 0.15s ease;
     cursor: pointer;
     -webkit-transform: scale(1);
     transform: scale(1);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
 }
 
-#triggr-info .triggr-info-toggle.toggle-open {
+#triggr-info.toggle-down .triggr-info-toggle {
+    border-top: 7px solid #fff;
+    border-bottom: none;
+}
+
+#triggr-info.toggle-up .triggr-info-toggle {
     border-top: none;
     border-bottom: 7px solid #fff;
 }

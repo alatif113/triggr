@@ -281,9 +281,13 @@ require([
         var scrollHeight = $('#triggr-info')[0].scrollHeight;
         var height = $('#triggr-info').outerHeight();
         if (scrollHeight > height) {
-            $('#triggr-info .triggr-info-toggle').css('display', 'block');
+            $('#triggr-info')
+                .addClass('toggle-down')
+                .removeClass('toggle-disable');
         } else {
-            $('#triggr-info .triggr-info-toggle').css('display', 'none');
+            $('#triggr-info')
+                .removeClass('toggle-down toggle-up')
+                .addClass('toggle-disable');
         }
     }
 
@@ -292,17 +296,25 @@ require([
         $('#triggr-info')
             .addClass('closed')
             .css('height', '');
-        $('#triggr-info .triggr-info-toggle').removeClass('toggle-open');
     });
 
     // click the dropdown toggle up button
-    $('#triggr-info .triggr-info-toggle').click(function() {
-        if ($(this).hasClass('toggle-open')) {
-            $('#triggr-info').css('height', '');
-            $(this).removeClass('toggle-open');
-        } else {
-            $('#triggr-info').css('height', $('#triggr-info')[0].scrollHeight + 'px');
-            $(this).addClass('toggle-open');
+    $('#triggr-info').click(function(e) {
+        if (e.target == $('#triggr-info .triggr-icon-clear')) {
+            e.stopPropagation();
+            return;
+        }
+
+        if ($(this).hasClass('toggle-up')) {
+            $(this)
+                .css('height', '')
+                .addClass('toggle-down')
+                .removeClass('toggle-up')
+        } else if ($(this).hasClass('toggle-down')) {
+            $(this)
+                .css('height', ($('#triggr-info')[0].scrollHeight + 20) + 'px')
+                .addClass('toggle-up')
+                .removeClass('toggle-down')
         }
     });
 
