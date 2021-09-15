@@ -46,10 +46,6 @@ def triggr(payload):
         LOGGER.error(logSource + 'msg="Unable to retrieve input configuration, session key, or owner." status="fail"')
         sys.exit(1)
 
-    # set certificate validation and log level
-    disable_cert_validation = {"1": False, "0": True}[config.get("cert_validation", "1")]
-    setLogLevel(config.get("log_level", "INFO"))
-
     # parse search object as JSON string
     try:
         targets = json.loads(config.get("targets"))
@@ -62,7 +58,7 @@ def triggr(payload):
         sys.exit(1)
 
     # prepare REST calls to dispatch
-    http = httplib2.Http(disable_ssl_certificate_validation=disable_cert_validation)
+    http = httplib2.Http(disable_ssl_certificate_validation=True)
     baseurl = 'https://localhost:8089'
     headers = {'Authorization': 'Splunk {}'.format(sessionKey)}
     body = urllib.urlencode({'trigger_actions': 1})

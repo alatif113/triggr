@@ -24,21 +24,16 @@ This app is currently unsupported for Internet Explorer.
 ### Rete.js
 
 MIT License
-
 Copyright (c) 2018 "Ni55aN" Vitaliy Stoliarov
-
 https://raw.githubusercontent.com/retejs/rete/master/LICENSE
 
 ## Vue
 
 The MIT License (MIT)
-
 Copyright (c) 2013-present, Yuxi (Evan) You
-
 https://raw.githubusercontent.com/vuejs/vue/dev/LICENSE
 
 ## klayjs
 
 Eclipse Public License - v 1.0
-
 https://raw.githubusercontent.com/kieler/klayjs/master/LICENSE
