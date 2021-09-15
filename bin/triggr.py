@@ -1,5 +1,4 @@
-from __future__ import print_function
-import sys, json, logging, urllib, httplib2, re
+import sys, json, logging, urllib.parse, httplib2, re
 
 LOGGER = logging.getLogger()
 LOGGER.setLevel(logging.INFO)
@@ -61,16 +60,16 @@ def triggr(payload):
     http = httplib2.Http(disable_ssl_certificate_validation=True)
     baseurl = 'https://localhost:8089'
     headers = {'Authorization': 'Splunk {}'.format(sessionKey)}
-    body = urllib.urlencode({'trigger_actions': 1})
+    body = urllib.parse.urlencode({'trigger_actions': 1})
     
     # dispatch each search in the search object
     for obj in targets:
         logTarget = logSource + 'target_app="{}" target_search="{}" '.format(obj["app"], obj["search"])
         url = '{}/servicesNS/{}/{}/saved/searches/{}/dispatch'.format(
             baseurl, 
-            urllib.quote(owner), 
-            urllib.quote(obj["app"]), 
-            urllib.quote(obj["search"])
+            urllib.parse.quote(owner), 
+            urllib.parse.quote(obj["app"]), 
+            urllib.parse.quote(obj["search"])
         )
 
         LOGGER.debug(logTarget + "Posting to REST Endpoint: {} with headers {} and body {}".format(url, headers, body))
