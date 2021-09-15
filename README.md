@@ -2,10 +2,12 @@
 
 Triggr is a Splunk application that allows you to chain multiple saved searches together, while only scheduling the first search in the chain. This is especially useful when sequential transformations are required for data within lookup tables or KV stores. 
 
+![screenshot.png](https://github.com/alatif113/triggr/blob/master/static/screenshot.PNG?raw=true)
+
 ## Usage
 
 1. Click the **"Add Search"** button to add searches into the editor. 
-2. Click and drag the the output of one search node into the input of another. 
+2. Click and drag the the output of one search node into the input of another to chain searches together. 
 3. Click **Save Changes** to save your changes and enable chaining of searches.  
 
 ### Considersations
