@@ -2,7 +2,7 @@
 
 Triggr is a Splunk application that allows you to chain multiple saved searches together, while only scheduling the first search in the chain. This is especially useful when sequential transformations are required for data within lookup tables or KV stores. 
 
-![screenshot.png](https://github.com/alatif113/triggr/blob/master/static/screenshot.PNG?raw=true)
+![screenshot.png](https://github.com/alatif113/triggr/blob/master/static/screenshot.png?raw=true)
 
 ## Usage
 
